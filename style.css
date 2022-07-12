@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Trirong", serif;
+    letter-spacing: 0.3px;
+}
+
+
+body{
+    background: #989898;  
+}
+
+header{
+    background: rgb(0, 0, 0);
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.empCards{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.card{
+    display: flex;
+    cursor:  pointer;
+    background: #385f5b;
+    flex-direction: column;
+    min-width: 200px;
+    max-width: 300px;
+    text-align: center;
+    min-height: 370px;
+    border-radius: 1rem;
+    box-shadow: #576066;
+    margin: 1.5rem;
+    
+
+}
+
+.cardText{
+        margin: 0.5rem;
+
+}
+
+.empText{
+    font-weight: 400;
+    opacity: 0.8;
+
+}
+
+img{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+

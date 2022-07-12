@@ -33,24 +33,47 @@ Employee.prototype.calNetSalary = function(){
 
 //creat prototype function to render employees
 Employee.prototype.render = function(){
-   
-    document.writeln(`full name : ${this.fName} ${this.lName}
-    <br>
-    salary before taxes = ${this.salary}
-    <br>
-    net salray = ${this.netSalary}
-    <br><br>`);
+   const empCard = document.createElement('div');
+   empCard.setAttribute('class','card');
+   empCards.appendChild(empCard);
+   const image = document.createElement('img');
+   image.setAttribute('src',this.img);
+   empCard.appendChild(image);
+   const cardText = document.createElement('div');
+   cardText.setAttribute('class','cardText');
+   empCard.appendChild(cardText);
+   const fullName = document.createElement('h3');
+   fullName.setAttribute('class','empText');
+   fullName.textContent = `Name : ${this.fName}  ${this.lName} - ID : ${this.id}`;
+   cardText.appendChild(fullName);
+   const dep = document.createElement('p');
+   dep.setAttribute('class','empText');
+   dep.textContent = `Department:${this.depart}-Level:${this.level}`;
+   cardText.appendChild(dep);
+   const salary = document.createElement('p');
+   salary.setAttribute('class','empText');
+   salary.textContent = `salary = ${this.salary}`;
+   cardText.appendChild(salary);
+   const netSalary = document.createElement('p');
+   netSalary.setAttribute('class','empText');
+   netSalary.textContent = `net salary = ${this.netSalary}`;
+   cardText.appendChild(netSalary);
+    
 }
 
 //creat objects
-const emp1 = new Employee(1000,'Ghazi','Samer','Administration','Senior','./assets/Ghazi.jpg');
-const emp2 = new Employee(1001,'Lana','Ali','Finance','Senior','./assets/Lana.jpg');
-const emp3 = new Employee(1002,'Tamara','Ayoub','Marketing','Senior','./assets/Tamara.jpg');
-const emp4 = new Employee(1003,'Safi','Walid','Administration','Mid-Senior','./assets/Safi.jpg');
-const emp5 = new Employee(1004,'Omar','Zaid','Development','Senior','./assets/Omar.jpg');
-const emp6 = new Employee(1005,'Rana','Saleh','Development','Junior','./assets/Rana.jpg');
-const emp7 = new Employee(1006,'Hadi','Ahmad','Finance','Mid-Senior','./assets/Hadi.jpg');
+const emp1 = new Employee(1000,'Ghazi','Samer','Administration','Senior','https://raw.githubusercontent.com/LTUC/new-prep-course-std/main/Day10/Task/assets/Ghazi.jpg');
+const emp2 = new Employee(1001,'Lana','Ali','Finance','Senior','https://raw.githubusercontent.com/LTUC/new-prep-course-std/main/Day10/Task/assets/Lana.jpg');
+const emp3 = new Employee(1002,'Tamara','Ayoub','Marketing','Senior','https://raw.githubusercontent.com/LTUC/new-prep-course-std/main/Day10/Task/assets/Tamara.jpg');
+const emp4 = new Employee(1003,'Safi','Walid','Administration','Mid-Senior','https://raw.githubusercontent.com/LTUC/new-prep-course-std/main/Day10/Task/assets/Safi.jpg');
+const emp5 = new Employee(1004,'Omar','Zaid','Development','Senior','https://raw.githubusercontent.com/LTUC/new-prep-course-std/main/Day10/Task/assets/Omar.jpg');
+const emp6 = new Employee(1005,'Rana','Saleh','Development','Junior','https://raw.githubusercontent.com/LTUC/new-prep-course-std/main/Day10/Task/assets/Rana.jpg');
+const emp7 = new Employee(1006,'Hadi','Ahmad','Finance','Mid-Senior','https://raw.githubusercontent.com/LTUC/new-prep-course-std/main/Day10/Task/assets/Hadi.jpg');
 
+const main = document.getElementById('main');
+const empCards = document.createElement('div');
+empCards.setAttribute('class','empCards');
+main.appendChild(empCards);
 
 //invoke prototype functions
 for(let i=0 ; i<employees.length ; i++){
